@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",
+   "types": "dist/index.d.ts", 
   "scripts": {
     "generate": "prisma generate --schema=prisma/schema.prisma",
     "build": "tsc -p tsconfig.json",

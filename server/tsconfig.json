@@ -11,7 +11,13 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "types": ["node"]
+    "types": ["node"],
+
+    // ⭐ ADD THIS PART
+    "baseUrl": ".",
+    "paths": {
+      "db": ["../packages/db/dist"]
+    }
   },
-  "include": ["src"]   // ✅ ONLY this
+  "include": ["src"]
 }
