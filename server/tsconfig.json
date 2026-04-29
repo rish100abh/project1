@@ -13,11 +13,12 @@
     "resolveJsonModule": true,
     "types": ["node"],
 
-    // ⭐ ADD THIS PART
     "baseUrl": ".",
     "paths": {
       "db": ["../packages/db/dist"]
-    }
+    },
+
+    "ignoreDeprecations": "6.0"   
   },
   "include": ["src"]
 }
