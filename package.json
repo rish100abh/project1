@@ -2,18 +2,30 @@
   "name": "my-fullstack-app",
   "private": true,
   "version": "1.0.0",
+
   "workspaces": [
     "client",
     "server",
     "packages/*"
   ],
+
   "scripts": {
     "dev": "concurrently \"npm run dev -w server\" \"npm run dev -w client\"",
-    "generate": "npm run generate -w db",
-    "build": "npm run generate && npm run build -w db && npm run build -w server && npm run build -w client",
+
     "dev:client": "npm run dev -w client",
-    "dev:server": "npm run dev -w server"
+    "dev:server": "npm run dev -w server",
+
+    "generate": "npm run generate -w db",
+
+    "build": "npm run generate && npm run build -w db && npm run build -w server && npm run build -w client",
+
+    "start": "npm run start -w server"   
   },
+
+  "engines": {
+    "node": "20.x"   
+  },
+
   "devDependencies": {
     "@types/node": "^25.6.0",
     "concurrently": "^9.1.2"
