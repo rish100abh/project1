@@ -3,11 +3,16 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+
     "outDir": "dist",
     "rootDir": "src",
-    "declaration": false,
+
+    "composite": true,              // ✅ required for monorepo
+    "declaration": true,            // ✅ useful for other packages
+
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["node"]               // ✅ fixes process/global errors
   },
   "include": ["src"]
 }
