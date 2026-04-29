@@ -3,10 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "main": "dist/index.js",
   "scripts": {
-    "generate": "prisma generate",
-    "migrate": "prisma migrate dev",
-    "studio": "prisma studio",
+    "generate": "prisma generate --schema=prisma/schema.prisma",
+    "build": "tsc -p tsconfig.json",
+    "migrate": "prisma migrate dev --schema=prisma/schema.prisma",
+    "studio": "prisma studio --schema=prisma/schema.prisma",
     "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {

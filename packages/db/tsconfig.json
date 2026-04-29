@@ -4,12 +4,10 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "outDir": "dist",
-    "rootDir": "..",
-    "strict": true,
-    "skipLibCheck": true,
+    "rootDir": "src",
+    "declaration": false,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "types": ["node"]
+    "skipLibCheck": true
   },
-  "include": ["src", "../packages/db/src"]
+  "include": ["src"]
 }

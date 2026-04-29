@@ -1,1 +1,1 @@
-export { prisma } from "../../../packages/db/src/client";
+export { prisma } from "db";
