@@ -10,9 +10,11 @@ import { notFound } from "./common/middlewares/notFound.middleware.js";
 
 const app = express();
 
+app.set("trust proxy", 1);
+
 app.use(helmet());
 app.use(cors(corsOptions));
-app.options('/{*splat}', cors(corsOptions));
+app.options("/{*splat}", cors(corsOptions));
 
 app.use(cookieParser());
 app.use(express.json());
