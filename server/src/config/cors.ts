@@ -4,7 +4,6 @@ const allowedOrigins = [
   "http://localhost:5173",
   env.clientUrl,
   "https://project1-client-59jp.vercel.app",
-  "https://project1-client-59jp-705aijsjet-rishabh-yadavs-projects-02177f0b.vercel.app",
 ].filter(Boolean);
 
 export const corsOptions = {
