@@ -12,6 +12,8 @@ const app = express();
 
 app.use(helmet());
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // ⭐ preflight fix
+
 app.use(cookieParser());
 app.use(express.json());
 
@@ -22,7 +24,9 @@ app.get("/api/health", (_req, res) => {
   });
 });
 
+// ⭐ BASE PATH
 app.use("/api", routes);
+
 app.use(notFound);
 app.use(errorHandler);
 
