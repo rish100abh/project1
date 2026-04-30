@@ -1,19 +1,18 @@
 import { env } from "./env.js";
 
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://project1-client-pq4r.vercel.app",
+  env.clientUrl,                 // production
+  "http://localhost:5173",       // dev (vite)
+  "https://project1-client-59pj-705aisjet-rishabh-yadavs-projects-02177f0b.vercel.app"       // optional
 ];
 
 export const corsOptions = {
-  origin: (origin: string | undefined, callback: any) => {
-    if (!origin) return callback(null, true);
-
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
     }
-
-    return callback(new Error("Not allowed by CORS"));
   },
   credentials: true,
 };
